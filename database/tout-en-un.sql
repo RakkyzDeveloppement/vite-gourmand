@@ -45,6 +45,7 @@ CREATE TABLE menus (
   base_price DECIMAL(10,2) NOT NULL,
   conditions_text TEXT,
   stock INT NOT NULL DEFAULT 0,
+  is_active TINYINT(1) NOT NULL DEFAULT 1,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   FOREIGN KEY (theme_id) REFERENCES themes(id),
@@ -222,6 +223,7 @@ VALUES
   (5, '12:00:00', '14:00:00', '18:00:00', '23:00:00', 0),
   (6, '12:00:00', '14:00:00', '18:00:00', '23:00:00', 0),
   (7, '12:00:00', '14:00:00', '18:00:00', '23:00:00', 0);
+
 
 
 
