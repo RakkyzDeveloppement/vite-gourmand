@@ -1,0 +1,240 @@
+:root {
+  --vg-bg: #f7f2ea;
+  --vg-surface: #fffdf9;
+  --vg-primary: #c26c2d;
+  --vg-primary-strong: #9f531e;
+  --vg-ink: #1c2522;
+  --vg-muted: #5f6b66;
+  --vg-border: #e7d8c6;
+  --vg-focus: #0a5bd3;
+}
+
+body {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(194, 108, 45, 0.08), transparent 32%),
+    radial-gradient(circle at 85% 0%, rgba(31, 42, 38, 0.08), transparent 40%),
+    var(--vg-bg);
+  color: var(--vg-ink);
+  font-family: "Manrope", sans-serif;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -999px;
+  z-index: 2000;
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: #000;
+  border: 2px solid var(--vg-focus);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+.main-content {
+  min-height: auto;
+  flex: 1 0 auto;
+}
+
+.navbar.bg-dark {
+  background: linear-gradient(90deg, #1f2a26 0%, #2d3d37 100%) !important;
+  border-bottom: 1px solid rgba(241, 212, 173, 0.25);
+}
+
+.navbar-brand {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.6rem;
+  letter-spacing: 0.03em;
+}
+
+.nav-link {
+  font-weight: 600;
+}
+
+.hero-scene {
+  border-radius: 0 0 22px 22px;
+  overflow: hidden;
+}
+
+.hero-scene h1 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 5vw, 3.3rem);
+  letter-spacing: 0.02em;
+}
+
+.hero-subtitle {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--vg-muted);
+}
+
+.surface {
+  border: 1px solid var(--vg-border);
+  border-radius: 16px;
+  background: var(--vg-surface);
+  box-shadow: 0 10px 30px rgba(20, 27, 24, 0.06);
+}
+
+.surface-dark {
+  background: linear-gradient(180deg, #1f2a26 0%, #18201d 100%);
+  color: #f3ede6;
+}
+
+section .card,
+.list-group-item,
+.table {
+  border-color: var(--vg-border);
+}
+
+.card,
+.list-group-item {
+  border-radius: 14px;
+  background: var(--vg-surface);
+  box-shadow: 0 10px 30px rgba(20, 27, 24, 0.06);
+}
+
+.menu-card .card-title {
+  font-size: 1.18rem;
+}
+
+.menu-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  font-size: 0.95rem;
+  color: var(--vg-muted);
+}
+
+.menu-meta-large {
+  gap: 0.9rem;
+}
+
+#order-form .form-label {
+  font-weight: 600;
+}
+
+#price-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem 1rem;
+}
+
+#price-summary .price-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+#price-summary .price-total {
+  border-left: 1px solid rgba(28, 37, 34, 0.15);
+  padding-left: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--vg-primary);
+  border-color: var(--vg-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--vg-primary-strong);
+  border-color: var(--vg-primary-strong);
+}
+
+.text-primary {
+  color: var(--vg-primary) !important;
+}
+
+.form-control,
+.form-select {
+  border-color: var(--vg-border);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--vg-primary);
+  box-shadow: 0 0 0 0.2rem rgba(194, 108, 45, 0.18);
+}
+
+/* Accessibilite clavier: focus explicite et contraste fort */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible,
+.nav-link:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--vg-focus) !important;
+  outline-offset: 2px !important;
+  box-shadow: none !important;
+}
+
+footer.footer {
+  position: static;
+  width: 100%;
+  margin-top: 2.5rem;
+  background: linear-gradient(180deg, #1f2a26 0%, #18201d 100%) !important;
+  flex-shrink: 0;
+}
+
+.footer p,
+.footer a {
+  font-size: 0.96rem;
+}
+
+.footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .hero-scene .hero-scene-content {
+    height: 260px;
+    padding: 0 1rem;
+  }
+
+  .container.py-4 {
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.2rem !important;
+  }
+
+  .surface {
+    border-radius: 12px;
+  }
+
+  #price-summary {
+    grid-template-columns: 1fr;
+  }
+
+  #price-summary .price-line {
+    font-size: 0.92rem;
+  }
+
+  #price-summary .price-total {
+    border-left: none;
+    border-top: 1px solid rgba(28, 37, 34, 0.15);
+    padding-left: 0;
+    padding-top: 0.5rem;
+    margin-top: 0.2rem;
+  }
+
+  #order-form .order-submit-row .btn {
+    width: 100%;
+  }
+}
