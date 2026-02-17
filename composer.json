@@ -1,0 +1,7 @@
+{
+    "name": "vite/gourmand",
+    "type": "project",
+    "require": {
+        "mongodb/mongodb": "^2.2"
+    }
+}
